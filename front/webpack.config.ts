@@ -76,12 +76,13 @@ const config: webpack.Configuration = {
     historyApiFallback: true, // react router
     port: 3090,
     publicPath: '/dist/',
-    // proxy: {
-    //   '/api/': {
-    //     target: 'http://localhost:3095',
-    //     changeOrigin: true,
-    //   },
-    // },
+    // localhost:3095가 3095에게 보내는 것
+    proxy: {
+      '/api/': {
+        target: 'http://localhost:3095',
+        changeOrigin: true,
+      },
+    },
   },
 };
 
